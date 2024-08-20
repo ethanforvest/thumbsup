@@ -10,15 +10,15 @@ A command-line interface (CLI) tool for generating thumbnails from video files. 
 
 ## Requirements
 
-- Python 3.x
+- Python 3.11+
 - OpenCV (cv2) library
 
 ## Installation
 
-First, make sure you have Python 3.x installed on your system. Then, install the required dependencies:
+First, make sure you have Python 3.11+ installed on your system. Then, install the required dependencies:
 
 ```bash
-pip install opencv-python
+pip install thumbsup
 ```
 
 ## Usage
