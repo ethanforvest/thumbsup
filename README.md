@@ -30,7 +30,7 @@ The CLI tool provides several options:
 You can list the contents of a directory using the `--ls` option:
 
 ```bash
-python main.py --ls /path/to/directory
+thumbsup --ls /path/to/directory
 ```
 
 ### 2. Generating Thumbnails for a Directory of Videos
@@ -38,7 +38,7 @@ python main.py --ls /path/to/directory
 To generate thumbnails for all supported video files in a directory:
 
 ```bash
-python main.py --dir /path/to/videos --format .mp4 .mkv --dest /path/to/output --at 0.25 0.5 0.75
+thumbsup --dir /path/to/videos --format .mp4 .mkv --dest /path/to/output --at 0.25 0.5 0.75
 ```
 
 - `--dir`: Directory containing video files.
@@ -51,7 +51,7 @@ python main.py --dir /path/to/videos --format .mp4 .mkv --dest /path/to/output -
 To generate thumbnails for a specific video file:
 
 ```bash
-python main.py --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
+thumbsup --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
 ```
 
 - `--file`: Path to the video file.
@@ -63,19 +63,19 @@ python main.py --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
 #### List directory contents:
 
 ```bash
-python main.py --ls /path/to/directory
+thumbsup --ls /path/to/directory
 ```
 
 #### Generate thumbnails for all `.mp4` files in a directory:
 
 ```bash
-python main.py --dir /path/to/videos --format .mp4 --dest /path/to/output
+thumbsup --dir /path/to/videos --format .mp4 --dest /path/to/output
 ```
 
 #### Generate thumbnails for a single video file:
 
 ```bash
-python main.py --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
+thumbsup --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
 ```
 
 ## Contributing
