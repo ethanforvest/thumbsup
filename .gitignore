@@ -1,1 +1,8 @@
 .venv
+
+# Python
+__pycache__
+
+# Build
+thumbnail_generator.egg-info
+thumbsup.egg-info

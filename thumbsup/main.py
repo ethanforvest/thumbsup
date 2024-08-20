@@ -103,30 +103,30 @@ def extract_frames(video_path, output_dir, at):
         # If frame is read correctly
         if ret:
             # Generate the output filename
-            output_filename = f'frame_{i+1}_at_{int(frame_pos / total_frames * 100)}_percent.jpg'
+            output_filename = f"frame_{i+1}_at_{int(frame_pos / total_frames * 100)}_percent.jpg"
             output_path = os.path.join(output_dir, output_filename)
             
             # Save the frame as an image
             cv2.imwrite(output_path, frame)
             
-            print(f'Saved frame at {int(frame_pos / total_frames * 100)}% of video duration')
+            print(f"Saved frame at {int(frame_pos / total_frames * 100)}% of video duration")
         else:
-            print(f'Failed to read frame at {int(frame_pos / total_frames * 100)}% of video duration')
+            print(f"Failed to read frame at {int(frame_pos / total_frames * 100)}% of video duration")
 
     video.release()
 
-    print('Frame extraction completed.')
+    print("Frame extraction completed.")
 
 
             
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="Thumbnail Generator CLI Tool")
 
 parser.add_argument("-d", "--dir", help="directory to work with", type=is_valid_dir_path)
 parser.add_argument("--ls", help="Information about the specified path", type=is_valid_dir_path)
 parser.add_argument("-F", "--file", help="the file to generate thumbnails from", type=is_valid_file)
 parser.add_argument("-D", "--dest", default=".", help="output directory where all the thumbnail folders will be created", type=is_valid_dir_path)
-parser.add_argument("-f", "--format", default=[".mp4"], help="to tell the file format(s) you want", choices=[".mp4", ".mkv", ".mov"], nargs="+")
-parser.add_argument("--at", default=[0.25, 0.5, 0.75], help="capture screenshot at... multiple arguments are supported. ex: 0.25 0.5 0.75 (25%, 50%, 75%)", nargs="+", type=float)
+parser.add_argument("-f", "--format", default=[".mp4"], help="to tell the file format(s) you want to capture", choices=[".mp4", ".mkv", ".mov"], nargs="+")
+parser.add_argument("--at", default=[0.25, 0.5, 0.75], help="capture screenshot at... multiple arguments are supported. ex: 0.25 0.5 0.75", nargs="+", type=float)
 
 args = parser.parse_args()
 
@@ -140,4 +140,7 @@ def main():
     if args.file:
         f_file(args.file, args.format, args.dest, args.at)
 
-main()
+
+
+if __name__ == "__main__":
+    main()
