@@ -32,7 +32,7 @@ def ls(ls: Path) -> None :
             file_size_kb = file_size / 1000
             file_size_mb = file_size_kb / 1000
             
-            print(f"{i.name} (FILE | {str(int(file_size_mb)) + " MB" if file_size_kb > 1000 else str(file_size_kb) + " KB"})")
+            print(f"{i.name} (FILE | {str(int(file_size_mb)) + ' MB' if file_size_kb > 1000 else str(file_size_kb) + ' KB'})")
         elif i.is_dir():
             print(f"{i.name} (DIR)")
   
@@ -49,7 +49,7 @@ def d_dir(dir: Path, format: list, dest: Path, at: list[float]) -> None :
             destination_path = dest / (i.stem + "_thumbsup")
             try:
                 print(f"Thumbnail generation started for: {i.name}")
-                extract_frames(i.absolute(), destination_path.resolve(), at)
+                extract_frames(str(i.absolute()), destination_path.resolve(), at)
                 print(f"Thumbnail generation completed for: {i.name}")
                 print(f"Destination: {destination_path.resolve()}")
             except:
@@ -68,7 +68,7 @@ def f_file(file: Path, format: list, dest: Path, at: list[float]):
         destination_path = dest / (file.stem + "_thumbsup")
         try:
             print(f"Thumbnail generation started for: {file.name}")
-            extract_frames(file.absolute(), destination_path.resolve(), at)
+            extract_frames(str(file.absolute()), destination_path.resolve(), at)
             print(f"Thumbnail generation completed for: {file.name}")
             print(f"Destination: {destination_path.resolve()}")
         except Exception as err:
