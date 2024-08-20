@@ -97,7 +97,6 @@ def extract_frames(video_path, output_dir, at):
         # Set the video position
         video.set(cv2.CAP_PROP_POS_FRAMES, frame_pos)
         
-        # Read the frame
         ret, frame = video.read()
         
         # If frame is read correctly
