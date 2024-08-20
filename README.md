@@ -1,21 +1,17 @@
-# Thumbnail Generator CLI Tool
+# Thumbsup 👍
 
-A command-line interface (CLI) tool for generating thumbnails from video files. The tool allows you to list files in a directory, generate thumbnails for video files, and specify custom frame extraction points.
+`thumbsup` is a command-line tool for generating thumbnails from video files. It supports various video formats and allows you to capture frames from specified positions within the video. Ideal for quickly creating snapshots from videos for previews or documentation.
 
 ## Features
 
-- **List Directory Contents**: View detailed information about files and directories.
-- **Generate Thumbnails**: Automatically extract frames from video files at specified intervals.
-- **Supported Formats**: `.mp4`, `.mov`, `.mkv`.
-
-## Requirements
-
-- Python 3.11+
-- OpenCV (cv2) library
+- **List Directory Contents**: Display information about files and directories, including sizes.
+- **Generate Thumbnails**: Create thumbnail images from videos in specified formats.
+- **Flexible Frame Extraction**: Capture frames at specified percentages of the video's duration.
+- **Customizable Output**: Specify the output directory and file formats to process.
 
 ## Installation
 
-First, make sure you have Python 3.11+ installed on your system. Then, install the required dependencies:
+You can install `thumbsup` via `pip`:
 
 ```bash
 pip install thumbsup
@@ -23,65 +19,51 @@ pip install thumbsup
 
 ## Usage
 
-The CLI tool provides several options:
-
-### 1. Listing Directory Contents
-
-You can list the contents of a directory using the `--ls` option:
+### List Directory Contents
 
 ```bash
 thumbsup --ls /path/to/directory
 ```
 
-### 2. Generating Thumbnails for a Directory of Videos
-
-To generate thumbnails for all supported video files in a directory:
+### Generate Thumbnails from a Directory
 
 ```bash
-thumbsup --dir /path/to/videos --format .mp4 .mkv --dest /path/to/output --at 0.25 0.5 0.75
+thumbsup --dir /path/to/directory --format .mp4 .mov --dest /path/to/output --at 0.25 0.5 0.75
 ```
 
-- `--dir`: Directory containing video files.
-- `--format`: (Optional) Specify file formats to include. Default is `.mp4`.
-- `--dest`: (Optional) Output directory where thumbnails will be saved. Default is the current directory.
-- `--at`: (Optional) Frame capture points as a percentage of video duration (e.g., 0.25 for 25%).
-
-### 3. Generating Thumbnails for a Single Video File
-
-To generate thumbnails for a specific video file:
+### Generate Thumbnails from a File
 
 ```bash
-thumbsup --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
+thumbsup --file /path/to/video.mp4 --dest /path/to/output --at 0.25 0.5 0.75
 ```
 
-- `--file`: Path to the video file.
-- `--dest`: (Optional) Output directory where thumbnails will be saved. Default is the current directory.
-- `--at`: (Optional) Frame capture points as a percentage of video duration.
+## Arguments
 
-### Example Commands
+- `--dir`: Directory to process for video files.
+- `--ls`: List information about the specified path.
+- `--file`: Single file to process for thumbnails.
+- `--dest`: Output directory where thumbnails will be saved.
+- `--format`: Video file formats to include (e.g., `.mp4`, `.mov`).
+- `--at`: Frame positions to capture (as percentages, e.g., `0.25` for 25%).
 
-#### List directory contents:
+## Examples
+
+To list the contents of a directory:
 
 ```bash
-thumbsup --ls /path/to/directory
+thumbsup --ls /my/videos
 ```
 
-#### Generate thumbnails for all `.mp4` files in a directory:
+To generate thumbnails from all `.mp4` and `.mov` files in a directory:
 
 ```bash
-thumbsup --dir /path/to/videos --format .mp4 --dest /path/to/output
-```
-
-#### Generate thumbnails for a single video file:
-
-```bash
-thumbsup --file /path/to/video.mp4 --dest /path/to/output --at 0.1 0.5 0.9
+thumbsup --dir /my/videos --format .mp4 .mov --dest /my/thumbnails --at 0.25 0.5 0.75
 ```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
+If you want to contribute to `thumbsup`, please fork the repository and submit a pull request. Ensure that your contributions adhere to the project's coding standards and include appropriate tests.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
