@@ -121,7 +121,7 @@ def extract_frames(video_path, output_dir, at):
 parser = argparse.ArgumentParser(description="Thumbnail Generator CLI Tool")
 
 parser.add_argument("-d", "--dir", help="directory to work with", type=is_valid_dir_path)
-parser.add_argument("--ls", help="Information about the specified path", type=is_valid_dir_path)
+parser.add_argument("--ls", help="information about the specified path", type=is_valid_dir_path)
 parser.add_argument("-F", "--file", help="the file to generate thumbnails from", type=is_valid_file)
 parser.add_argument("-D", "--dest", default=".", help="output directory where all the thumbnail folders will be created", type=is_valid_dir_path)
 parser.add_argument("-f", "--format", default=[".mp4"], help="to tell the file format(s) you want to capture", choices=[".mp4", ".mkv", ".mov"], nargs="+")
