@@ -52,8 +52,9 @@ def d_dir(dir: Path, format: list, dest: Path, at: list[float]) -> None :
                 extract_frames(str(i.absolute()), destination_path.resolve(), at)
                 print(f"Thumbnail generation completed for: {i.name}")
                 print(f"Destination: {destination_path.resolve()}")
-            except:
+            except Exception as err:
                 print(f"Something went wrong. file: {i.name}")
+                print(err)
                 continue
 
     if not media_file_count:
