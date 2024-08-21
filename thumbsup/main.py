@@ -46,7 +46,7 @@ def d_dir(dir: Path, format: list, dest: Path, at: list[float]) -> None :
         if (i.suffix in format) & i.is_file():
             media_file_count += 1
 
-            destination_path = dest / (i.stem + "_thumbsup")
+            destination_path = dest / (i.stem + "_THUMBSUP")
             try:
                 print(f"Thumbnail generation started for: {i.name}")
                 extract_frames(str(i.absolute()), destination_path.resolve(), at)
@@ -66,7 +66,7 @@ def d_dir(dir: Path, format: list, dest: Path, at: list[float]) -> None :
 
 def f_file(file: Path, format: list, dest: Path, at: list[float]):
     if file.is_file():
-        destination_path = dest / (file.stem + "_thumbsup")
+        destination_path = dest / (file.stem + "_THUMBSUP")
         try:
             print(f"Thumbnail generation started for: {file.name}")
             extract_frames(str(file.absolute()), destination_path.resolve(), at)
