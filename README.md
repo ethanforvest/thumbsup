@@ -62,7 +62,7 @@ thumbsup --dir /my/videos --format .mp4 .mov --dest /my/thumbnails --at 0.25 0.5
 
 ## Contributing
 
-If you want to contribute to `thumbsup`, please fork the repository and submit a pull request. Ensure that your contributions adhere to the project's coding standards and include appropriate tests.
+If you want to contribute to `thumbsup`, please fork the repository and submit a pull request.
 
 ## License
 
