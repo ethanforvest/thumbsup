@@ -125,7 +125,7 @@ parser.add_argument("-d", "--dir", help="directory to work with", type=is_valid_
 parser.add_argument("--ls", help="information about the specified path", type=is_valid_dir_path)
 parser.add_argument("-F", "--file", help="the file to generate thumbnails from", type=is_valid_file)
 parser.add_argument("-D", "--dest", default=".", help="output directory where all the thumbnail folders will be created", type=is_valid_dir_path)
-parser.add_argument("-f", "--format", default=[".mp4"], help="to tell the file format(s) you want to capture", choices=[".mp4", ".mkv", ".mov"], nargs="+")
+parser.add_argument("-f", "--format", default=[".mp4"], help="to tell the file format(s) you want to capture", choices=supported_file_formats, nargs="+")
 parser.add_argument("--at", default=[0.25, 0.5, 0.75], help="capture screenshot at... multiple arguments are supported. ex: 0.25 0.5 0.75", nargs="+", type=float)
 
 args = parser.parse_args()
