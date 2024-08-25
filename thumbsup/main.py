@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 import cv2
 
-supported_file_formats = [".mp4", ".mov", ".mkv"]
+supported_file_formats = [".mp4", ".mov", ".mkv", ".m4v"]
 
 def is_valid_dir_path(path) -> Path:
     if os.path.isdir(path):
