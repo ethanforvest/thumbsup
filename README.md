@@ -67,3 +67,5 @@ If you want to contribute to `thumbsup`, please fork the repository and submit a
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<a href="https://www.buymeacoffee.com/ethanforvest" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
